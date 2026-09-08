@@ -9,7 +9,6 @@
             background: linear-gradient(to right, #f6d365, #fda085);
             color: #333;
         }
-
         .container {
             border: 2px solid #f6d365;
             border-radius: 15px;
@@ -18,22 +17,18 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
         .transaction-table {
             margin-top: 20px;
         }
-
         .transaction-actions {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .btn-primary {
             background-color: #f6d365;
             border-color: #f6d365;
         }
-
         .btn-primary:hover {
             background-color: #f6d365;
             border-color: #f6d365;
@@ -43,7 +38,6 @@
 <body>
     <div class="container">
         <h1 class="text-center">Transaction Records</h1>
-
         <table class="table transaction-table">
             <thead>
                 <tr>
@@ -63,11 +57,15 @@
                     </td>
                 </tr>
                 {% endfor %}
+                <tr>
+                    <td colspan="2"><strong>Total Balance</strong></td>
+                    <td><strong>{{ balance }}</strong></td>
+                </tr>
             </tbody>
         </table>
-
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" style="gap: 10px;">
             <a class="btn btn-success" href="{{ url_for('add_transaction') }}">Add Transaction</a>
+            <a class="btn btn-info" href="{{ url_for('search_transactions') }}">Search Transactions</a>
         </div>
     </div>
 </body>
